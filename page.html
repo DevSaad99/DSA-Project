@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Reservation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        nav {
+            margin: 10px 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        main {
+            padding: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+        .button:hover {
+            background: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        table th {
+            background-color: #333;
+            color: white;
+        }
+        form input, form button {
+            margin: 10px 0;
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BUS RESERVATION SYSTEM</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/add_bus">Add New Bus</a>
+        <a href="/show_buses">Show Available Buses</a>
+    </nav>
+    <main>
+            <h2>Welcome to the Bus Reservation System</h2>
+            <p>Select an option from the navigation menu to get started.</p>
+            
+            <h2>Add a New Bus</h2>
+            <form method="post">
+                <label>Bus Number:</label><br><input type="text" name="busNumber" required><br>
+                <label>Driver's Name:</label><br><input type="text" name="busDriver" required><br>
+                <label>Arrival Time:</label><br><input type="text" name="busArrival" required><br>
+                <label>Departure Time:</label><br><input type="text" name="busDeparture" required><br>
+                <label>From:</label><br><input type="text" name="bFrom" required><br>
+                <label>To:</label><br><input type="text" name="bTo" required><br>
+                <button class="button" type="submit">Add Bus</button>
+            </form>
+            <h2>Reserve a Seat on Bus {{ bus['number'] }}</h2>
+            <form method="post">
+                <label>Seat Number (1-32):</label><br>
+                <input type="number" name="seatNumber" required><br>
+                <label>Passenger Name:</label><br>
+                <input type="text" name="passengerName" required><br>
+                <button class="button" type="submit">Reserve</button>
+            </form>
+        </main>
+    </body>
+</html>
